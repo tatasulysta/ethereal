@@ -11,15 +11,12 @@ export const cutEdgeStyles = {
     },
     variants: {
       filled: {
-        true: {
-          backgroundColor: colors.primary,
-        },
+        true: {},
 
         false: {
-          backgroundColor: colors.primary,
           zIndex: 1,
-          width: "calc(100% + 4px)",
-          height: "calc(100% + 4px)",
+          width: "calc(auto + 4px)",
+          height: "calc(auto + 4px)",
           ":after": {
             WebkitClipPath:
               "polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px)",
@@ -34,6 +31,14 @@ export const cutEdgeStyles = {
             left: 1,
             zIndex: -1,
           },
+        },
+      },
+      colors: {
+        primary: {
+          backgroundColor: colors.primary,
+        },
+        weak: {
+          backgroundColor: "#e5e7eb",
         },
       },
     },
