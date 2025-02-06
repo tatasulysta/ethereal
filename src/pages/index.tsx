@@ -1,7 +1,6 @@
-import { DM_Sans, Merriweather_Sans } from "next/font/google";
+import { DM_Sans, Merriweather_Sans, Tomorrow } from "next/font/google";
 import classNames from "classnames";
-import Navbar from "@/components/widgets/navbar";
-import Footer from "@/components/widgets/footer";
+import LandingPage from "@/components/modules/landing";
 
 const merriweatherSans = Merriweather_Sans({
   variable: "--font-merriweather-sans",
@@ -13,19 +12,24 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+const tomorrow = Tomorrow({
+  variable: "--font-tomorrow",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export default function Home() {
   return (
     <div
       className={classNames(
         merriweatherSans.variable,
         dmSans.variable,
+        tomorrow.variable,
         "bg-black",
       )}
     >
       <div className="px-2 sm:px-8 md:px-20 lg:px-36">
-        <Navbar />
-        <div className="bg-white w-100 h-20"></div>
-        <Footer />
+        <LandingPage />
       </div>
     </div>
   );

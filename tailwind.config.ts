@@ -11,10 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#7E37FF",
+        textLight: "#515151",
       },
       fontFamily: {
         primary: ["DM Sans", "serif"],
         secondary: ["Merriweather Sans", "serif"],
+        tertiary: ["Tomorrow", "serif"],
       },
       screens: {
         xs: "414px",

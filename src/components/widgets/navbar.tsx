@@ -1,5 +1,5 @@
 import React from "react";
-import { RouteEnum } from "../utils/route-list";
+import { RouteEnum } from "../../utils/route-list";
 type Route = {
   label: string;
   route: RouteEnum;
