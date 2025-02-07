@@ -9,10 +9,11 @@ import CutEdge from "@/components/common/cut-edge";
 import { Gradient } from "@/assets";
 import classNames from "classnames";
 import { landingStyles } from "../styles.css";
+import { RouteEnum } from "@/utils/route-list";
 
 export default function HeroSection() {
   return (
-    <section>
+    <section id={RouteEnum.Home}>
       <div
         className={classNames(
           "w-96 h-auto sm:w-full absolute md:-top-[20%] left-0",

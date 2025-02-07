@@ -1,10 +1,11 @@
 import Button from "@/components/common/button";
 import CutEdge from "@/components/common/cut-edge";
+import { RouteEnum } from "@/utils/route-list";
 import React from "react";
 
 export default function CTASection() {
   return (
-    <section className="mb-52 flex justify-center">
+    <section className="mb-52 flex justify-center" id={RouteEnum.CTA}>
       <CutEdge
         filled={false}
         className="p-2 md:p-4 max-w-xl md:max-w-screen-xxl"
