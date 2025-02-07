@@ -4,4 +4,7 @@ export const landingStyles = {
   gradient: style({
     aspectRatio: "1/0.4",
   }),
+  sphere: style({
+    aspectRatio: "0.6/1",
+  }),
 };
