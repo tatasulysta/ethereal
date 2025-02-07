@@ -5,6 +5,7 @@ import classNames from "classnames";
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
   size?: "small" | "default";
+  btnClassname?: string;
 }
 
 export default function Button(props: Props) {
@@ -12,10 +13,15 @@ export default function Button(props: Props) {
     variant = "primary",
     type = "button",
     size = "default",
+    className,
+    btnClassname,
     ...rest
   } = props;
   return (
-    <CutEdge filled={variant === "primary"}>
+    <CutEdge
+      filled={variant === "primary"}
+      className={classNames(className, "flex justify-center")}
+    >
       <button
         {...rest}
         type={type}
@@ -23,8 +29,8 @@ export default function Button(props: Props) {
           size === "small"
             ? "px-4 py-2 text-xs md:text-sm"
             : "px-10 py-3 text-sm md:text-base",
-          "font-primary",
-          rest.className,
+          "font-primary flex-1",
+          btnClassname,
         )}
       />
     </CutEdge>
