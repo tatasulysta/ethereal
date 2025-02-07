@@ -6,18 +6,29 @@ import Collection1 from "@/assets/nft-1.png";
 import Collection2 from "@/assets/nft-2.png";
 import Collection3 from "@/assets/nft-3.png";
 import CutEdge from "@/components/common/cut-edge";
+import { Gradient } from "@/assets";
+import classNames from "classnames";
+import { landingStyles } from "../styles.css";
 
 export default function HeroSection() {
   return (
     <section>
-      <div className="flex items-center flex-col gap-6 md:gap-10 mt-10 md:mt-20">
+      <div
+        className={classNames(
+          "w-96 h-auto sm:w-full absolute md:-top-[20%] left-0",
+          landingStyles.gradient,
+        )}
+      >
+        <Image src={Gradient} alt="gradient" fill />
+      </div>
+      <div className="flex items-center flex-col gap-6 md:gap-10 pt-32 md:mt-20">
         <h1 className="font-primary text-gray-300 text-center text-xs md:text-base">
           &rdquo;
           <span className="font-semibold font-primary">Ethereal</span>:
           empowering collectors with access to unique digital treasures&ldquo;
         </h1>
         <div className="flex flex-col gap-2">
-          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl font-tertiary text-center lg:max-w-screen-md">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-tertiary text-center lg:max-w-screen-md">
             Discover the{" "}
             <strong className="font-normal text-primary">Future</strong> of
             Decentralized
@@ -29,7 +40,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="mt-8 sm:mt-14 flex justify-center">
+      <div className="mt-10 sm:mt-14 flex justify-center">
         <Button variant="primary" size="small">
           Let&apos;s Get Started
         </Button>

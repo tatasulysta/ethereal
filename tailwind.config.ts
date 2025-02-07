@@ -27,6 +27,9 @@ export default {
         xl: "1280px",
         xxl: "1366px",
       },
+      space: {
+        half: "50%",
+      },
     },
   },
   plugins: [],
