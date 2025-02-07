@@ -5,7 +5,7 @@ import PointSection from "./sections/point";
 import CTASection from "./sections/cta";
 import Footer from "@/components/widgets/footer";
 import Image from "next/image";
-import { GradientThree, GradientTwo, Sphere } from "@/assets";
+import { GradientTwo } from "@/assets";
 import classNames from "classnames";
 import { landingStyles } from "./styles.css";
 
