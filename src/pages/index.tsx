@@ -1,8 +1,8 @@
+"use client";
 import { DM_Sans, Merriweather_Sans, Tomorrow } from "next/font/google";
 import classNames from "classnames";
 import LandingPage from "@/components/modules/landing";
 import React from "react";
-
 const merriweatherSans = Merriweather_Sans({
   variable: "--font-merriweather-sans",
   subsets: ["latin"],
