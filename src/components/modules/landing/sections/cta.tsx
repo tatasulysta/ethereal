@@ -1,9 +1,21 @@
 import Button from "@/components/common/button";
 import CutEdge from "@/components/common/cut-edge";
 import { RouteEnum } from "@/utils/route-list";
+import gsap from "gsap";
 import React from "react";
 
 export default function CTASection() {
+  const btnRef = React.useRef<HTMLButtonElement | null>(null);
+
+  const onClick = () => {
+    gsap.to(btnRef.current, {
+      duration: 0.2,
+      opacity: 0.5,
+      ease: "power1.out",
+      yoyo: true,
+      repeat: 1,
+    });
+  };
   return (
     <section className="mb-52 flex justify-center" id={RouteEnum.CTA}>
       <CutEdge
@@ -29,7 +41,9 @@ export default function CTASection() {
                   placeholder="e.g user@gmail.com"
                 />
               </CutEdge>
-              <Button className="max-w-32">Subscribe</Button>
+              <Button className="max-w-32" onClick={onClick} ref={btnRef}>
+                Subscribe
+              </Button>
             </div>
           </div>
         </CutEdge>

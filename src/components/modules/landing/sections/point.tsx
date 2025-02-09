@@ -17,17 +17,17 @@ export default function PointSection() {
       switch (index) {
         case 0:
           return {
-            x: -200,
+            x: -100,
             ...DEFAULT_MODIFIER,
           };
         case 1:
           return {
-            z: 200,
+            z: 100,
             ...DEFAULT_MODIFIER,
           };
         default:
           return {
-            x: 200,
+            x: 100,
             ...DEFAULT_MODIFIER,
           };
       }

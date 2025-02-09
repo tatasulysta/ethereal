@@ -41,7 +41,11 @@ interface CollectionProps {
 function ImageCollection(props: CollectionProps) {
   const { alt, src, ref } = props;
   return (
-    <CutEdge filled={false} className="p-2 max-md:max-w-[100px]" ref={ref}>
+    <CutEdge
+      filled={false}
+      className="p-2 max-w-none sm:max-w-[100px] md:max-w-none"
+      ref={ref}
+    >
       <CutEdge filled={false}>
         <div className={classNames("aspect-square relative col-span-1")}>
           <Image src={src} fill alt={alt} />
@@ -81,7 +85,7 @@ export default function PopularSection() {
         Popular <span className="text-primary">Collections</span>
       </Subtitle>
       <div
-        className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 w-full items-center gap-10 mt-20"
+        className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 w-full items-center gap-8 md:gap-10 mt-10 md:mt-20"
         ref={containerRef}
       >
         {IMAGES.map((src, index) => (
