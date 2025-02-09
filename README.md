@@ -1,7 +1,6 @@
 # Ethereal
 
 Project made by using Next.js and Tailwind
-https://ethereal-psi.vercel.app/
 
 ## Run Project
 
