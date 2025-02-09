@@ -33,6 +33,7 @@ export default function PointSection() {
       }
     },
   });
+
   return (
     <section
       className="my-28 md:my-52 flex flex-col items-center justify-center"

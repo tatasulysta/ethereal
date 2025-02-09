@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,6 +14,7 @@ export default {
         foreground: "var(--foreground)",
         primary: "#7E37FF",
         textLight: "#515151",
+        darkBlue: "#140C1F",
       },
       fontFamily: {
         primary: ["DM Sans", "serif"],

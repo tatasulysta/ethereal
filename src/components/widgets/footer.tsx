@@ -1,9 +1,12 @@
 import Link from "next/link";
+
 import React from "react";
 import { DiscordLogo, InstagramLogo, XLogo } from "@phosphor-icons/react";
 import { colors } from "@/utils/colors";
 import Button from "../common/button";
 import Logo from "../modules/components/logo";
+import { ROUTE } from "./header/route";
+import ManualLink from "./header/link";
 
 function IconLink({
   children,
@@ -47,8 +50,13 @@ export default function Footer() {
           <div className="">
             <p className="font-primary text-large font-semibold">Company</p>
             <ul className="font-primary text-sm md:text-large">
-              <li>Features</li>
-              <li>Join Us</li>
+              {ROUTE.map((route, index) => (
+                <ManualLink
+                  key={`route-lg-${index}`}
+                  {...route}
+                  classname="font-normal mt-2"
+                />
+              ))}
             </ul>
           </div>
           <div className="">
