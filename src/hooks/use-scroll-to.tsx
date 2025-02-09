@@ -6,7 +6,7 @@ import { RouteEnum } from "@/utils/route-list";
 interface ScrollContextType {
   navRef: React.RefObject<HTMLDivElement | null>;
 
-  scrollToSection: (id: string) => void;
+  scrollToSection: (id: RouteEnum) => void;
 }
 
 interface Props {
