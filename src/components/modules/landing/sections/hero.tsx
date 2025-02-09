@@ -68,7 +68,7 @@ export default function HeroSection() {
           empowering collectors with access to unique digital treasures&ldquo;
         </h1>
         <div className="flex flex-col gap-2">
-          <h2 className="text-3xl md:text-5xl font-tertiary text-center lg:max-w-screen-md">
+          <h2 className="text-3xl text-white md:text-5xl font-tertiary text-center lg:max-w-screen-md">
             Discover the{" "}
             <strong className="font-normal text-primary">Future</strong> of
             Decentralized

@@ -25,7 +25,7 @@ function IconLink({
 }
 export default function Footer() {
   return (
-    <footer className="flex w-full justify-center flex-col items-center">
+    <footer className="flex w-full justify-center flex-col items-center text-white">
       <div className="max-w-xl md:max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-4 px-2 pb-10 md:pb-20 items-center content-between w-full flex-1">
         <div>
           <Logo />

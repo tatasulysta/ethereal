@@ -48,7 +48,7 @@ export default function PointSection() {
           }}
         >
           <MarketIcon size={62} />
-          <p className="text-lg sm:text-xl md:text-xl font-primary text-center">
+          <p className="text-lg sm:text-xl md:text-xl font-primary text-center text-white">
             Top-selling NFTs
           </p>
         </li>
@@ -59,7 +59,7 @@ export default function PointSection() {
           }}
         >
           <MonitoringIcon size={62} />
-          <p className="text-lg sm:text-xl md:text-xl font-primary text-center">
+          <p className="text-lg sm:text-xl md:text-xl font-primary text-center text-white">
             Limited edition drops
           </p>
         </li>
@@ -70,7 +70,7 @@ export default function PointSection() {
           }}
         >
           <BiddingIcon size={62} />
-          <p className="text-lg sm:text-xl md:text-xl font-primary text-center">
+          <p className="text-lg sm:text-xl md:text-xl font-primary text-center text-white">
             Upcoming auctions
           </p>
         </li>

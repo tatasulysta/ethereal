@@ -23,7 +23,7 @@ export default function Dropdown() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden bg-blue text-white px-4 py-2 rounded-md flex items-center gap-2"
+        className="md:hidden bg-blue dark:text-white px-4 py-2 rounded-md flex items-center gap-2"
       >
         {open ? <X size={24} /> : <List size={24} />}
       </button>

@@ -17,14 +17,17 @@ export default function CTASection() {
     });
   };
   return (
-    <section className="mb-52 flex justify-center" id={RouteEnum.CTA}>
+    <section
+      className="mb-52 flex justify-center text-white"
+      id={RouteEnum.CTA}
+    >
       <CutEdge
         filled={false}
         className="p-2 md:p-4 max-w-xl md:max-w-screen-xxl"
         colors="weak"
       >
         <CutEdge>
-          <div className="flex flex-col gap-8 justify-center py-4 px-1 sm:py-12 sm:px-8 bg-slate-900 ">
+          <div className="flex flex-col gap-8 justify-center py-4 px-1 sm:py-12 sm:px-8 dark:bg-slate-900 ">
             <h4 className="text-xl md:text-3xl font-tertiary text-center">
               Never <span className="text-primary">Miss</span> a Drop!
             </h4>
