@@ -1,17 +1,56 @@
 import Button from "@/components/common/button";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
-import Collection1 from "@/assets/nft-1.png";
-import Collection2 from "@/assets/nft-2.png";
-import Collection3 from "@/assets/nft-3.png";
 import CutEdge from "@/components/common/cut-edge";
-import { Gradient } from "@/assets";
+import { Collection1, Collection2, Collection3, Gradient } from "@/assets";
 import classNames from "classnames";
 import { landingStyles } from "../styles.css";
 import { RouteEnum } from "@/utils/route-list";
+import useAnimationEntrance from "@/hooks/use-animation-entrance";
+import gsap from "gsap";
+import { useScrollContext } from "@/hooks/use-scroll-to";
+
+function ImageContainer(props: {
+  small?: boolean;
+  src: StaticImageData;
+  alt: string;
+  ref?: React.Ref<HTMLDivElement>;
+}) {
+  const { small, src, alt, ref } = props;
+  return (
+    <div
+      className={classNames(
+        "relative aspect-square",
+        small ? "col-span-3" : "col-span-4",
+        "min-h-[100px]",
+      )}
+      ref={ref}
+    >
+      <CutEdge filled={false} colors="weak" className="p-2">
+        <CutEdge filled={false} colors="weak">
+          <Image src={src} alt={alt} />
+        </CutEdge>
+      </CutEdge>
+    </div>
+  );
+}
 
 export default function HeroSection() {
+  const { containerRef } = useAnimationEntrance({});
+  const { scrollToSection } = useScrollContext();
+  const btnRef = React.useRef<HTMLButtonElement | null>(null);
+  const onClick = () => {
+    gsap.to(btnRef.current, {
+      duration: 0.2,
+      opacity: 0.5,
+      ease: "power1.out",
+      yoyo: true,
+      repeat: 1,
+    });
+    scrollToSection(RouteEnum.Populars);
+  };
+
   return (
     <section id={RouteEnum.Home}>
       <div
@@ -42,33 +81,41 @@ export default function HeroSection() {
       </div>
 
       <div className="mt-10 sm:mt-14 flex justify-center">
-        <Button variant="primary" size="small">
+        <Button
+          variant="primary"
+          size="small"
+          onClick={onClick}
+          ref={btnRef}
+          className="px-2"
+        >
           Let&apos;s Get Started
         </Button>
       </div>
       <div className="flex flex-1 justify-center">
         <div className="grid grid-cols-10 mt-10 sm:mt-20 gap-4 md:gap-9 max-w-sm  md:max-w-2xl">
-          <div className="relative aspect-square col-span-3">
-            <CutEdge filled={false} colors="weak" className="p-2">
-              <CutEdge filled={false} colors="weak">
-                <Image src={Collection1} alt="nft-1-collection" />
-              </CutEdge>
-            </CutEdge>
-          </div>
-          <div className="relative aspect-square col-span-4">
-            <CutEdge filled={false} colors="weak" className="p-2">
-              <CutEdge filled={false} colors="weak">
-                <Image src={Collection2} alt="nft-2-collection" />
-              </CutEdge>
-            </CutEdge>
-          </div>
-          <div className="relative aspect-square col-span-3">
-            <CutEdge filled={false} colors="weak" className="p-2">
-              <CutEdge filled={false} colors="weak">
-                <Image src={Collection3} alt="nft-3-collection" />
-              </CutEdge>
-            </CutEdge>
-          </div>
+          <ImageContainer
+            src={Collection1}
+            small
+            alt="nft-1-collection"
+            ref={(el) => {
+              containerRef.current[0] = el;
+            }}
+          />
+          <ImageContainer
+            src={Collection2}
+            alt="nft-2-collection"
+            ref={(el) => {
+              containerRef.current[1] = el;
+            }}
+          />
+          <ImageContainer
+            src={Collection3}
+            small
+            alt="nft-3-collection"
+            ref={(el) => {
+              containerRef.current[2] = el;
+            }}
+          />
         </div>
       </div>
     </section>

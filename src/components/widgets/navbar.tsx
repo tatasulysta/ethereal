@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React from "react";
 import { RouteEnum } from "../../utils/route-list";
 import Logo from "../modules/components/logo";
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/all";
+import { useScrollContext } from "@/hooks/use-scroll-to";
 
 type Route = {
   label: string;
@@ -14,38 +13,12 @@ type Route = {
 const routes: Route[] = [
   { label: "Home", route: RouteEnum.Home },
   { label: "Features", route: RouteEnum.Features },
+  { label: "Popular Collection", route: RouteEnum.Populars },
   { label: "Contact", route: RouteEnum.CTA },
 ];
 
-gsap.registerPlugin(ScrollToPlugin);
-
 export default function Navbar() {
-  const [mounted, setMounted] = useState<boolean>(false);
-  const navRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const scrollToSection = useCallback(
-    (id: string) => {
-      const targetElement =
-        (document.getElementById(id) as HTMLDivElement)?.getBoundingClientRect()
-          .top + window.scrollY;
-      const nav = navRef?.current?.offsetHeight || 0;
-      console.log(targetElement, nav);
-      if (targetElement) {
-        gsap.to(window, {
-          duration: 1,
-          scrollTo: targetElement - nav,
-          ease: "power2.out",
-        });
-      }
-    },
-    [navRef],
-  );
-
-  if (!mounted) return null;
+  const { navRef, scrollToSection } = useScrollContext();
 
   return (
     <nav
@@ -61,6 +34,7 @@ export default function Navbar() {
               key={`route-${index}`}
               className="font-primary text-sm font-semibold cursor-pointer"
               onClick={() => scrollToSection(route.route)}
+              role="button"
             >
               {route.label}
             </li>

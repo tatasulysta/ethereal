@@ -8,7 +8,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   btnClassname?: string;
 }
 
-export default function Button(props: Props) {
+const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const {
     variant = "primary",
     type = "button",
@@ -23,6 +23,7 @@ export default function Button(props: Props) {
       className={classNames(className, "flex justify-center")}
     >
       <button
+        ref={ref}
         {...rest}
         type={type}
         className={classNames(
@@ -35,4 +36,7 @@ export default function Button(props: Props) {
       />
     </CutEdge>
   );
-}
+});
+
+Button.displayName = "Button";
+export default Button;

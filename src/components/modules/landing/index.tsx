@@ -8,35 +8,30 @@ import Image from "next/image";
 import { GradientTwo } from "@/assets";
 import classNames from "classnames";
 import { landingStyles } from "./styles.css";
+import PopularSection from "./sections/popular";
+import { ScrollProvider } from "@/hooks/use-scroll-to";
 
 export default function LandingPage() {
   return (
-    <>
+    <ScrollProvider>
       <Navbar />
       <HeroSection />
       <div className="relative">
         <PointSection />
-        <CTASection />
-        <div
+        <PopularSection />
+        {/* <div
           className={classNames(
             "absolute h-full  md:h-full w-1/2  -top-16 md:top-0 md:-right-0 -right-1/3",
             landingStyles.sphere,
           )}
         >
           <Image src={GradientTwo} alt="gradient" fill />
-        </div>
-        <div
-          className={classNames(
-            "absolute right-0 top-1/2  h-full  md:h-full w-1/2 -translate-x-1/2 ",
-            landingStyles.sphere,
-          )}
-        >
-          <Image src={GradientTwo} alt="gradient" fill />
-        </div>
+        </div> */}
       </div>
+      <CTASection />
 
       {/* <div className="bg-white w-100 h-20"></div> */}
       <Footer />
-    </>
+    </ScrollProvider>
   );
 }
